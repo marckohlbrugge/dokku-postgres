@@ -111,9 +111,11 @@ dokku postgres:link lolipop playground
 # and the following will be set on the linked application by default
 #
 #   DATABASE_URL=postgres://postgres:SOME_PASSWORD@dokku-postgres-lolipop:5432/lolipop
+#   JDBC_DATABASE_URL=postgres://dokku-postgres-lolipop:5432/lolipop?user=postgres&password=SOME_PASSWORD
 #
 # NOTE: the host exposed here only works internally in docker containers. If
 # you want your container to be reachable from outside, you should use `expose`.
+# As well, we shall omit the JDBC url from all following examples for brevity.
 
 # another service can be linked to your app
 dokku postgres:link other_service playground
